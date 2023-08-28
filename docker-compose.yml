@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    container_name: fincheck-container
+    restart: always
+    volumes:
+      - ~/apps/postgres:/var/lib/postgres
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=fincheck
+volumes:
+  postgres-data:
